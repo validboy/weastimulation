@@ -65,13 +65,10 @@ object WeatherModel {
     /*
    * Temperature regression Model
    * Including below features
-   * timeSeriesFeature: MMDDHHMI
-   * seasonFeature: category Spring/Summer/Autumn/Winter
-   * dayNightFeature: category day time or night time
+   * seasonFeature: Spring/Summer/Autumn/Winter
+   * dayNightFeature: day time or night time
    * latitudeFeature: latitude
-   * longitudeFeature: longitude
    * elevationFeature: elevation
-   * regionFeature: category Tropics/Subtropics/Temperate zone/Frigid zone
    * oceanologyFeature: category Warm current/Cold current/Inland
    */
     lazy val temperatureVector = trainingSet map (t =>
@@ -87,10 +84,7 @@ object WeatherModel {
     /*
    * air pressure regression Model
    * Including below features
-   * timeSeriesFeature: MMDDHHMI
-   * regionFeature: category Tropics/Subtropics/Temperate zone/Frigid zone
    * latitudeFeature: latitude
-   * longitudeFeature: longitude
    * elevationFeature: elevation
    * temperatureFeature: temperature
    */
@@ -107,12 +101,10 @@ object WeatherModel {
     /*
    * humidity regression Model
    * Including below features
-   * timeSeriesFeature: MMDDHHMI
-   * seasonFeature: category Spring/Summer/Autumn/Winter
-   * oceanologyFeature: category Warm current/Cold current/Inland
    * latitudeFeature: latitude
-   * longitudeFeature: longitude
+   * dayNightFeature: day time or night time
    * elevationFeature: elevation
+   * oceanologyFeature: Warm current/Cold current/Inland
    */
 
     lazy val humidityVector = trainingSet map (t =>
@@ -129,12 +121,6 @@ object WeatherModel {
     /*
    * weatherCondition classification Model
    * Including below features
-   * timeSeriesFeature: MMDDHHMI
-   * seasonFeature: category Spring/Summer/Autumn/Winter
-   * oceanologyFeature: category Warm current/Cold current/Inland
-   * latitudeFeature: latitude
-   * longitudeFeature: longitude
-   * elevationFeature: elevation
    * temperatureFeature: temperature
    * airPressureFeature: airPressure
    * humidityFeature: humidity
